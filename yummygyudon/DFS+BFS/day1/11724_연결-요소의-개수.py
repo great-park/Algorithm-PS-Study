@@ -3,38 +3,39 @@ BFS 방식
 """
 import sys
 from collections import deque
-
-def bfs(graph, v, visit):
-    que = deque([v])
-    visit[v] = True
-    while que:
-        v = que.popleft()
-        for i in graph[v]:
-            if not visit[i]:
-                que.append(i)
-                visit[i] = True
-
 input = sys.stdin.readline
+
+def bfs(node):
+    q = deque()
+    q.append(node)
+    while q:
+        now_node = q.popleft()
+        for neighbor in GRAPH[now_node] :
+            if not VISIT[neighbor]:
+                q.append(neighbor)
+                VISIT[neighbor] = True
+
+
 # 정점 개수 N, 간선 개수 M
 N, M = map(int, input().split())
-
-graph = [ [] for _ in range(N+1) ]
-
+# 주소가 1부터 시작하기 때문에 index 연산을 위해선 길이 +1
+GRAPH = [[] for _ in range(N+1)]
 # 연결 간선에 따라 각자 연결된 노드들 목록에 서로를 등록
 for _ in range(M):
     v1,v2 = map(int, input().split())
-    graph[v1].append(v2)
-    graph[v2].append(v1)
+    GRAPH[v1].append(v2)
+    GRAPH[v2].append(v1)
 
 # 주소가 1부터 시작하기 때문에 index 연산을 위해선 길이 +1
 VISIT = [False] * (N+1) # 연산 여부 체크리스트 : 전역 변수
 cnt = 0
 
-for v in range(1, N+1):
+for node in range(1, N+1):
     # 이미 해당 시작 노드에 대해서 BFS 연산을 했을 경우, Skip
-    if VISIT[v]:
+    if VISIT[node]:
         continue
-    bfs(graph, v, VISIT)
+    VISIT[node] = True
+    bfs(node)
     cnt += 1
 
 print(cnt)
