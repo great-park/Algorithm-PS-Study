@@ -18,13 +18,16 @@ def bfs(node):
 
 # 정점 개수 N, 간선 개수 M
 N, M = map(int, input().split())
+
 # 주소가 1부터 시작하기 때문에 index 연산을 위해선 길이 +1
 GRAPH = [[] for _ in range(N+1)]
+
 # 연결 간선에 따라 각자 연결된 노드들 목록에 서로를 등록
 for _ in range(M):
     v1,v2 = map(int, input().split())
     GRAPH[v1].append(v2)
     GRAPH[v2].append(v1)
+
 
 # 주소가 1부터 시작하기 때문에 index 연산을 위해선 길이 +1
 VISIT = [False] * (N+1) # 연산 여부 체크리스트 : 전역 변수
