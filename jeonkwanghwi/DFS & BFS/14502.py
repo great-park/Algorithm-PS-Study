@@ -8,6 +8,7 @@
 # 즉, 벽을 3개 세우고 바이러스가 퍼진 상태에서 0의 개수를 세면 된다.
 
 
+
 from collections import deque
 import copy
 
