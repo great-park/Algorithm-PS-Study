@@ -45,6 +45,7 @@ for i in range(H):
             result.append(bfs(i,k))
 
 result.sort()
+
 """
 BFS를 실행 했다 == 영역이 있다
 영역 크기를 담는 result 요소 길이 == BFS 실행 횟수
