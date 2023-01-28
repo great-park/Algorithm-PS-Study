@@ -37,8 +37,21 @@ def BFS(p):
 def solve(removed_node):
     cnt = 0
     alive[removed_node] = False
-    for child in tree[removed_node]:
-        BFS(child)
+
+    # 리프노드를 삭제하는 경우
+    if len(tree[removed_node]) == 0:
+        # 삭제하려는 노드의 부모 인덱스 구하기
+        parent_index = 0
+        for i, parent in enumerate(tree):
+            for child in parent:
+                if child == removed_node:
+                    parent_index = i
+        # 삭제하려는 노드을 부모에서 제거
+        tree[parent_index].remove(removed_node)
+    # internal 노드를 삭제하는 경우
+    else:
+        for child in tree[removed_node]:
+            BFS(child)
 
     for i in range(N):
         if alive[i] and len(tree[i]) == 0:
