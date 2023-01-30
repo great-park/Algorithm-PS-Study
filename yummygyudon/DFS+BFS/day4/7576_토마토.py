@@ -55,16 +55,32 @@ def ripeningTomato(tomatoPostionList:list) :
                 BOX[n_y][n_x] = move+1
                 q.append([n_y, n_x, move + 1])
 
+"""
+박스 안에 가장 큰 값이 가장 최소 경과 시간
+"""
 def calcResult(box) :
     MAX = -1e9
-    for line in box:
+    for line in box :
         for block in line :
+            """
+            단 1개라도 익지 않았다면 -1 반환
+            """
             if block == 0 :
                 return -1
+            """
+            더 큰 값이 나타날때마다 MAX 값 갱신
+            """
             if block > MAX :
                 MAX = block
+    """
+    MAX가 1이라는 것은 시작 완숙 토마토에서 더이상 퍼져나가지 못하는 상황 (완숙 토마토 1개 + 빈 칸만 있는 경우)
+    """
     if MAX == 1 :
         return 0
+    """
+    if MAX == 1 조건문이나 if block == 0 조건문에 걸리지 않았다면
+    갱신했던 MAX값 반환
+    """
     return MAX
 
 ripeningTomato(TOMATO_POS)
