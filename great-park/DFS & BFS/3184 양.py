@@ -8,7 +8,7 @@ dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
 
 # 울타리 내부를 BFS 실시
-# 양과 늑대의 마리 수를 저장한다. -> 결과 계산
+# 양과 늑대의 마릿수를 저장한다. -> 결과 계산
 
 
 def BFS(x, y):
@@ -30,7 +30,7 @@ def BFS(x, y):
                 if not visited[next_y][next_x] and graph[next_y][next_x] != '#':  # 탐색 가능 확인
                     queue.append([next_x, next_y])
                     visited[next_y][next_x] = True
-                    # 양 or 늑대에 따라 마리 수 증가
+                    # 양 or 늑대에 따라 마릿수 증가
                     if graph[next_y][next_x] == 'o':
                         sheep += 1
                     elif graph[next_y][next_x] == 'v':
