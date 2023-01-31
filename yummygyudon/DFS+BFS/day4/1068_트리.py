@@ -65,7 +65,6 @@ input = sys.stdin.readline
 
 """ 
 2차 시도  
-
 """
 
 N = int(input())
@@ -83,6 +82,11 @@ for idx, parentNum in enumerate(PARENT,start=0) :
         """
         ROOT = idx
         continue
+    """
+    CHILD 리스트에는 -1 idx가 없기 때문에
+    CHILD[-1] 을 수행하는 문제가 생김
+     -> 조회할 때는 -1이 되지만 append에서는 문제가 생깁니다.
+    """
     CHILD[parentNum].append(idx)
 
 """
@@ -97,13 +101,17 @@ def removeChildrenNodes(removeNode) :
 
 removeChildrenNodes(DEL)
 
+print(PARENT)
+print(CHILD)
+
 COUNT = 0
 
 for i in range(N) :
     """
     자신이 삭제되지 않았으며
-    어떤 노드도 자신을 부모로 같지 않을 경우
+    어떤 노드도 "자신을 부모로 갖지 않을 경우"
     == "리프 노드"
+    i == 노드 번호
     """
     if not PARENT[i] == REMOVED and i not in PARENT:
         COUNT += 1
