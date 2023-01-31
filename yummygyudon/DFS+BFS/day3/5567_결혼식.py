@@ -44,6 +44,7 @@ for _ in range(M) :
     a,b = map(int, input().split())
     GRAPH[a].append(b)
     GRAPH[b].append(a)
+
 CHECK_LIST = [False]*(N+1)
 INVITE_COUNT = 0
 

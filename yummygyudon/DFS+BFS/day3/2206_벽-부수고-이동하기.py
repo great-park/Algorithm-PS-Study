@@ -15,7 +15,7 @@ MOVE 삼중 리스트
 - Depth 3 index 0층 : 벽을 안부수고 가는 경로
 - Depth 3 index 1층 : 벽을 부수고 가는 경로
 """
-MOVE =[ [[0]*2 for _ in range(M)] for _ in range(N)] # 0과 1을 갖는 crush 값을 통해 indexing까지
+MOVE =[ [[0,0] for _ in range(M)] for _ in range(N)] # 0과 1을 갖는 crush 값을 통해 indexing까지
 # 우, 좌, 히, 싱
 d = [[0,1], [0,-1], [1,0], [-1,0]]
 
