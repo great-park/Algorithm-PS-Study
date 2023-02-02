@@ -7,11 +7,14 @@ CHECK = [0] * N
 for idx in range(N) :
     """
     이전 값들 확인
+    뒤에 있는 값들
+    - 기준 값보다 작은 값 & 해당 작은 값이 가지는 수열이 가장 길다면 
     """
     for before in range(idx) :
         if NUMS[idx] > NUMS[before] and CHECK[idx] < CHECK[before] :
             CHECK[idx] = CHECK[before]
     CHECK[idx] += 1
+    print(CHECK)
 
 # print(CHECK)
 print(max(CHECK))
