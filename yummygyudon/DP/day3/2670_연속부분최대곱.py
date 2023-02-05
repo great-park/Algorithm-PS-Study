@@ -9,8 +9,8 @@ for _ in range(N) :
 """
 1번째 방식-DP 갱신 : 시간 초과
 """
-# DP = [0.0] * N
-#
+DP = [0.0] * N
+
 # for i in range(N) : # 0
 #     tmp = FLOATS[i]
 #     for k in range(i+1,N) : # 1,2,3,4,5,6,7
@@ -18,7 +18,7 @@ for _ in range(N) :
 #         DP[i] = max(tmp, DP[i])
 #     print(DP)
 # print("%.3f"%max(DP))
-
+#
 # for i in range(N-1,-1,-1) : # 7
 #     tmp = FLOATS[i]
 #     for k in range(1, i) : # 1,2,3,4,5,68
