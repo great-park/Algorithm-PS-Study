@@ -15,6 +15,7 @@ DP = [1e9] * (N+1)
 
 DP[0] = 0
 
+# coin
 for i in range(1,N+1) :
     for coin in COINS:
         """
