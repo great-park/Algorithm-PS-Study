@@ -11,8 +11,6 @@ def find(building, depth):
     mid = len(building) // 2
     ans[depth].append(building[mid])
 
-    if mid == 0:
-        return
     if depth == K-1:
         return
 
