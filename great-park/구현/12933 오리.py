@@ -46,6 +46,10 @@ def valid():
     for i in range(size):
         if duck[i] != 'X':
             return False
+        if ans == 0:
+            return False
+        if not complete:
+            return False
     return True
 
 
@@ -53,7 +57,4 @@ while go():
     find_duck()
 
 result = ans if valid() else -1
-if result == 0 or not complete:
-    print(-1)
-else:
-    print(result)
+print(result)
