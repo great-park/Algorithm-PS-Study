@@ -23,4 +23,4 @@ for value in range(N**2, 0, -1):
 
 for row in data:
     print(*row)
-print(find_x, find_y)
+print(find_y, find_x)
