@@ -37,6 +37,9 @@
 #     ans_area += check_row(height)
 # print(ans_area)
 
+"""
+구글에서 다른 분 코드 참고
+"""
 H, W = [*map(int, input().split())]
 blocks = [*map(int, input().split())]
 result = 0  # 빗물의 고인 양

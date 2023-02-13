@@ -4,7 +4,7 @@ K = int(input())
     4, 7
     44, 47, 74, 77
     444, 447, 474, 477, 744, 747, 774, 777
-
+    4444444  4444447
     => n의 자리 -> 2^n의 경우의 수
 
     -> ex) 474 -> 4*100 + 7*10 + 4*1 => 010 
@@ -22,11 +22,10 @@ else:
             break
         K -= x
     ans = ''
-    b_K = list(format(K-1, 'b'))  # 10
+    b_K = list(format(K-1, 'b'))
     front_four_count = K - len(b_K)
     for _ in range(front_four_count):
         ans += '4'
-
     for value in b_K:
         if value == '1':
             ans += '7'
