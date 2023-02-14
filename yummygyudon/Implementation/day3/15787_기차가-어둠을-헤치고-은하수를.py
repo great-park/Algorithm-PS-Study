@@ -21,6 +21,7 @@ for _ in range(M):
     command=list(map(int,input().split()))
     if command[0]==1:
         TRAIN[command[1]][command[2]-1]=1
+
     elif command[0]==2:
         TRAIN[command[1]][command[2]-1]=0
 
@@ -53,6 +54,6 @@ for eachTrain in TRAIN[1:]:
     """
     동일한 상태의 기차가 없을 경우에만 통과
     """
-    if i not in alreadyPass:
+    if eachTrain not in alreadyPass:
         alreadyPass.append(eachTrain)
 print(len(alreadyPass))

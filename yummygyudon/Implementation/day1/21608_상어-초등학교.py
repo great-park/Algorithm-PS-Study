@@ -43,6 +43,7 @@ def firstMapping(studentNum) :
                 if friend == MAP[i][k] :
                     for ablePos in checkAblePos(i,k) :
                         friendsPos.append(ablePos)
+
     if not friendsPos :
         print("좋아하는 친구가 없다")
         return checkBestBlank()
@@ -74,7 +75,7 @@ def checkBestBlank() :
                     nx = k+d[j][1]
                     if 0<=ny<N and 0<=nx<N and MAP[ny][nx] == 0 :
                         cnt+=1
-                blanks.append([cnt,i,k])
+                blanks.append( [cnt,i,k] )
     blanks.sort(key=lambda pos : (-pos[0], pos[1], pos[2]))
     print(blanks)
     return [blanks[0][1], blanks[0][2]]
@@ -113,12 +114,14 @@ SURVEY = 0
 for i in range(N) :
     for k in range(N):
         checkStudent = MAP[i][k]
+        print("만족도 조사 대상 : ", checkStudent)
         cnt = 0
         for j in range(4):
             ny = i + d[j][0]
             nx = k + d[j][1]
             if 0 <= ny < N and 0 <= nx < N and MAP[ny][nx] in LOVE[checkStudent]:
                 cnt += 1
+        print("만족도 : ",cnt)
         SURVEY += SCORE[cnt]
 print("만족도 총 합 : ", SURVEY)
 

@@ -78,10 +78,10 @@ print(answer)
 #
 # print(time)
 # print("번째의 2진",format(K, 'b'))
-# for i in range(time, 0, -1) :
+# for i in range(time, 0, -1) :K-(2**i))
 #     print("K : ",K)
 #     print("해당 자릿수의 경의 수 : ", 2**i)
-#     print("해당 자릿수에 올  숫자의 인덱스 : ", (K-(2**i)) % 2)
+#     print("해당 자릿수에 올  숫자의 인덱스 : ", ( % 2)
 #     answer += DEFAULT[K%2] * (10**(i-1))
 #     K -= 2 ** i  # -4
 #     print(answer)
