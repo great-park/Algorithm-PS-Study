@@ -16,7 +16,7 @@ input = sys.stdin.readline
 # else :
 #     print(COURSE[-(K-len(COURSE))])
 
-""""""
+"""통과"""
 N, K = map(int, input().split())
 SECTIONS = [0]+list(map(int,input().split()))
 # pathCost = sum(SECTIONS)

@@ -24,7 +24,9 @@ def dfs(startIndex, endIndex,depth) :
     # print(SEQUENCE[midIndex])
 
     if depth >= K :
-    # if abs(startIndex-endIndex) == 1 : -> startIndex와 endIndex의 차가 1이면 한개의 값밖에 없다는 것
+        """
+    if abs(startIndex-endIndex) == 1 : -> startIndex와 endIndex의 차가 1이면 한개의 값밖에 없다는 것
+        """
         return
     # leftChild = SEQUENCE[(startIndex+midIndex)//2]
     # rightChild = SEQUENCE[((midIndex+1)+endIndex)//2]

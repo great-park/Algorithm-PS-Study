@@ -15,6 +15,7 @@ for _ in range(N) :
     else :
         EXTENSION[extension] = EXTENSION.get(extension) + 1
 
+print(EXTENSION)
 KEYS = list(EXTENSION.keys())
 KEYS.sort()
 for key in KEYS :

@@ -12,7 +12,9 @@ def dfs(startIndex,endIndex) :
         return
     # if not strings :
     #     return
+    print("확인 영역 : ", WORD[startIndex:endIndex])
     sortedWord = sorted(WORD[startIndex:endIndex])
+    print("확인 영역 내 가장 작은 단어를 찾기 위해 정렬 : ", sortedWord)
 
     index = WORD.find(sortedWord[0],startIndex)
     INDEXES.append(index)
@@ -22,6 +24,7 @@ def dfs(startIndex,endIndex) :
     for idx in INDEXES :
         char += WORD[idx]
     print(char)
+    print()
 
     # # if startIndex < SIZE-1 :
     dfs(index+1,endIndex)
