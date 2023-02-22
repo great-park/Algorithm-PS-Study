@@ -46,7 +46,7 @@ while index < (1 << N) : # 16가지 경우의 수가 다 돌때 까지
     print()
 print(result)
 """
-0 번째 경우의 수 !
+0 번째 경우의 수 !료
 
 
 1 번째 경우의 수 !
@@ -222,6 +222,27 @@ nowB :  [7, 6, 8, 9]
 MIN :  6
 0 1 2 3 
 """
+
+
+"""
+itertools combinations 활용
+"""
+from itertools import combinations
+combi = []
+for i in range(1,N+1) :
+    combi.append(combinations(INGREDIENT, i))
+result = 1e9
+for case in combi :
+    for eachCombi in case :
+        tmp_s = 1
+        tmp_b = 0
+        for ingredient in eachCombi :
+            tmp_s *= ingredient[0]
+            tmp_b += ingredient[1]
+        result = min(result, abs(tmp_s-tmp_b))
+print(result)
+
+
 
 
 # if N >= 2 :
