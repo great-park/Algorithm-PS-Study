@@ -22,27 +22,29 @@ LESSON.sort()
 """
 시도 1 : 시간 초과
 """
-# onTime = []#deque()
-# onTime.append(LESSON[0][1])
-# count = 1
-# for start, end in LESSON[1:] :
-#
-#     """
-#     기존 최솟값보다 더 빨리 끝나는 값이 들어올 경우 대비
-#     -> sort해서 매번 가장 일찍 끝나는 시간을 조회해서 start를 비교함
-#
-#     이미 수업중인 수업중에서 이번에 끝나거나 이미 끝난 수업이 없을 경우, append
-#     끝나거나 이미 끝난 수업이 있을 경우 -> 같은 강의실로 이어붙일 수 있다는 것 -> 기존 강의 pop & 이어붙일 강의 append
-#     """
-#     if onTime[0] <= start :
-#         count -= 1
-#         onTime.pop(0)
-#
-#     onTime.append(end)
-#     count += 1
-#     onTime.sort()
-#     # print(onTime)
-# print(count)
+onTime = []#deque()
+onTime.append(LESSON[0][1])
+count = 1
+for start, end in LESSON[1:] :
+
+    """
+    기존 최솟값보다 더 빨리 끝나는 값이 들어올 경우 대비
+    -> sort해서 매번 가장 일찍 끝나는 시간을 조회해서 start를 비교함
+
+    이미 수업중인 수업중에서 이번에 끝나거나 이미 끝난 수업이 없을 경우, append
+    끝나거나 이미 끝난 수업이 있을 경우 -> 같은 강의실로 이어붙일 수 있다는 것 -> 기존 강의 pop & 이어붙일 강의 append
+    """
+    if onTime[0] <= start :
+        count -= 1
+        onTime.pop(0)
+
+    onTime.append(end)
+    count += 1
+    onTime.sort()
+    # print(onTime)
+print(count)
+
+
 
 import heapq
 onTime = []

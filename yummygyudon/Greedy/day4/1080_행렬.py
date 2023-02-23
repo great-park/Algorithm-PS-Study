@@ -15,7 +15,11 @@ def change(x, y) :
             1 - 1 : 0
             1 - 0 : 1
             """
-            MATRIX_A[i][k] = 1 - MATRIX_A[i][k]
+            # MATRIX_A[i][k] = 1 - MATRIX_A[i][k]
+            if MATRIX_A[i][k] == 0 :
+                MATRIX_A[i][k] = 1
+            elif MATRIX_A[i][k] == 1 :
+                MATRIX_A[i][k] = 0
 
 """
 range에 음수가 들어갈 경우
@@ -41,6 +45,7 @@ for i in range(H) :
     for k in range(W):
         if MATRIX_A[i][k] != MATRIX_B[i][k] :
             COUNT = -1
+            break
 print(COUNT)
 
 # for i in range(-2) :

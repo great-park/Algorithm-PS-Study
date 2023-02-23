@@ -73,4 +73,5 @@ def checkBlock(y,x) :
 for i in range(N) :
     for k in range(M) :
         checkBlock(i,k)
+
 print(MAX)

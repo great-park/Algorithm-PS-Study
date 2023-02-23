@@ -19,8 +19,12 @@ SCORE = []
 for _ in range(N) :
     dueDate, score = ASSIGNMENT.popleft()
     SCORE.append(score)
+    print(SCORE)
     SCORE.sort()
+    print(SCORE)
     if dueDate < len(SCORE) :
+        print("뺴버리기")
         SCORE.pop(0)
+    print()
 
 print(sum(SCORE))

@@ -57,6 +57,7 @@ while q :
             """
             다음 칸의 우유를 먹든 무시하든 우선 이동하긴해야함.
             """
+            print(DP)
             q.append([ny, nx])
             # print(DP)
 print(DP[N-1][N-1])
