@@ -1,19 +1,35 @@
+from sys import stdin
+input = stdin.readline
 n = int(input())
-ans = 0
-a, b, c = [False]*n, [False]*(2*n-1), [False]*(2*n-1)
+cnt = 0
 
 
-def solve(i):
-    global ans
-    if i == n:
-        ans += 1
+def is_available(candidate, current_col):
+    current_row = len(candidate)
+    for queen_row in range(current_row):  # abs- 절댓값 함수
+        # 수직 체크 or 대각선 체크
+        if candidate[queen_row] == current_col or abs(candidate[queen_row] - current_col) == current_row - queen_row:
+            return False
+    return True
+
+
+def DFS(N, current_row, current_candidate):
+    global cnt
+    if current_row == N:  # 여기까지 호출됐다는 것은 퀸의 배치가 완료된 것.
+        cnt += 1
         return
-    for j in range(n):
-        if not (a[j] or b[i+j] or c[i-j+n-1]):
-            a[j] = b[i+j] = c[i-j+n-1] = True
-            solve(i+1)
-            a[j] = b[i+j] = c[i-j+n-1] = False
+
+    for candidate_col in range(N):
+        if is_available(current_candidate, candidate_col):
+            current_candidate.append(candidate_col)
+            DFS(N, current_row + 1, current_candidate)
+            current_candidate.pop()  # 백트래킹
 
 
-solve(0)
-print(ans)
+def solve_n_queens(N):
+    DFS(N, 0, [])
+    print(cnt)
+    return
+
+
+solve_n_queens(n)
