@@ -2,7 +2,9 @@ import sys
 input = sys.stdin.readline
 N = int(input())
 TIMES = list(map(int, input().split()))
+
 TIMES.sort()
+
 RESULT= [0]*(N+1)
 
 """

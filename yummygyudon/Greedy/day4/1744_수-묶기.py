@@ -24,14 +24,16 @@ idx = 0
 while True :
     if idx >= N :
         break
+
+
     if USED[idx] :
         idx+=1
         continue
+
     if NUMS[idx] < 0 :
         for i in range(idx+1, N):
             """
             (-) * (-) = (+) 인 부분도 고려해야 함.
-
             사용 안된 음수 혹은 0에 대해서 만나면 
             """
             if NUMS[i] <= 0 and not USED[i] :
